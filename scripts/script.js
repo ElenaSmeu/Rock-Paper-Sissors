@@ -162,7 +162,7 @@ const updateComputerChoice = () => {
         }
         computerChoice.classList.add(`${computerChosenWeapon}-wrap`);
         computerChoiceIcon.src = `images/icon-${computerChosenWeapon}.svg`;
-        goToStep4();
+        /**goToStep4();
         calculateScore();
         for( i = 0; i <= choices.length -1; i++) {
             if (computerChoice2.classList.contains(`${choices[i]}-wrap`)) {
@@ -171,6 +171,7 @@ const updateComputerChoice = () => {
         }
         computerChoice2.classList.add(`${computerChosenWeapon}-wrap`);
         computerChoiceIcon2.src = `images/icon-${computerChosenWeapon}.svg`;
+        **/
     }, 1000);
     
 }

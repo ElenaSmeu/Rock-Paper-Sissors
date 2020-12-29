@@ -457,15 +457,34 @@ html, body {
     .modal .modal-header #close-modal-button {
         display: none;
     }
-    .modal #close-modal-button {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
     .active-modal {
         display: flex;
     }
-
+    #step-2 {
+        width: 90%;
+    }
+    #step-2 .choice-container{
+        width: 100px;
+        height: 100px;
+    }
+    #step-2 .empty-choice {
+        width: 100px;
+        height: 100px;
+        margin-top: 30px;
+    }
+    #step-2 #user-choice {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #step-2 .game-sides-title{
+        font-size: 14px;
+        margin-top: 25px;
+    }
+    #step-2 #computer-choice {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
   }
 @keyframes pulse-animation {
     0% {
