@@ -9,19 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
-
-  Score
-  Rules
-
-  You Picked
-  The House Picked
-
-  You Win
-  You Lose
-
-  Play Again
-
+  <title>Rock, Paper, Scissors</title>
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -29,12 +17,134 @@
   </style>
 </head>
 <body>
-
-
-  
+  <div id="rules-modal" class="modal">
+    <div class="modal-header">
+      <div class="modal-title">RULES</div>
+      <div id="close-modal-button">
+        <img alt="close button" src="images/icon-close.svg">
+      </div>
+    </div>
+    <div class="modal-body">
+      <img alt="normal-rules" src="images/image-rules.svg">
+    </div>
+  </div>
+  <div class="background">
+  </div>
+  <div id="container" class="container">
+    <div class="header-container">
+      <div class="header-text">
+        <div>Rock</div>
+        <div>Paper</div>
+        <div>Scissors</div>
+      </div>
+      <div class="score-container">
+        <div class="score-title">Score</div>
+        <div id="score">12</div>
+      </div>
+    </div>
+    <div id="step-1">
+      <div id="game">
+      <div class="game-buttons">
+        <div class="game-background">
+          <img alt="triangle" src="images/bg-triangle.svg">
+        </div>
+        <div id="button-1">
+          <div id="paper" class="paper-wrap">
+          <div class="paper-container">
+              <img alt="paper" class="icon" id="paperIcon" src="images/icon-paper.svg">
+          </div>
+        </div>
+        </div>
+        <div id="button-2">
+         <div id="scissors" class="scissors-wrap">
+          <div class="scissors-container">
+            <img alt="scissors" class="icon" id="scissorsIcon" src="images/icon-scissors.svg">
+          </div>
+        </div>
+      </div>
+      <div id="button-3">
+        <div id="rock" class="rock-wrap">
+          <div class="rock-container">
+            <img alt="rock" class="icon" id="rockIcon" src="images/icon-rock.svg">
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div id="step-2">
+      <div>
+      <div class="game-choices">
+        <div id="user-choice">
+          <div class="game-sides-title">You Picked</div>
+          <div id="choice" class="choice-wrap">
+          <div class="choice-container">
+            <img alt="rock" class="icon" id="choiceIcon" src="images/icon-rock.svg">
+          </div>
+        </div>
+        </div>
+        <div id="computer-choice">
+          <div class="game-sides-title">The House Picked</div>
+          <div class="empty-choice"></div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div id="step-3">
+      <div>
+      <div class="game-choices">
+        <div id="user-choice">
+          <div class="game-sides-title">You Picked</div>
+          <div id="choice" class="choice-wrap">
+            <div class="choice-container">
+              <img alt="rock" class="icon" id="choiceIcon" src="images/icon-rock.svg">
+            </div>
+        </div>
+        </div>
+        <div id="computer-choice">
+          <div class="game-sides-title">The House Picked</div>
+          <div id="choice" class="choice-wrap">
+            <div class="choice-container">
+              <img alt="rock" class="icon" id="choiceIcon" src="images/icon-rock.svg">
+            </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div id="step-4">
+      <div class="game-choices">
+        <div id="user-choice">
+          <div class="game-sides-title">You Picked</div>
+          <div id="choice" class="choice-wrap winner-wrap">
+            <div class="choice-container">
+              <img alt="rock" class="icon" id="choiceIcon" src="images/icon-rock.svg">
+            </div>
+        </div>
+        </div>
+        <div class="result">
+          <div id="result">You Lose</div>
+          <div id="play-again" class="lose">Play Again</div>
+        </div>
+        <div id="computer-choice">
+          <div class="game-sides-title">The House Picked</div>
+          <div id="choice" class="choice-wrap">
+            <div class="choice-container">
+              <img alt="rock" class="icon" id="choiceIcon" src="images/icon-rock.svg">
+            </div>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div id="rules" class="rules-button">
+      <div>Rules</div>
+  </div>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script type="text/javascript" src="scripts/script.js"></script>
 </body>
 </html>
