@@ -371,6 +371,102 @@ html, body {
 .active-step {
     display: inline !important;
 }
+.modal-body #close-modal-button {
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    .header-container {
+        width: 80%;
+        padding: 15px;
+        margin-top: 20px;
+    }
+    .header-container .header-text {
+        font-size: 20px;
+    }
+    .header-container .score-container {
+        width: 80px;
+        height: 50px;
+    }
+    .header-container .score-container #score {
+        font-size: 30px;
+    }
+    .header-container .score-container .score-title {
+        font-size: 14px;
+    }
+    .game-background {
+        left: -65%;
+    }
+    #button-1 {
+        left: -75%;
+    }
+    #button-2 {
+        left: 60%;
+    }
+    #button-3 {
+        top: 126%;
+        left: -6%;
+    }
+    .reset-button {
+        left: 25px;
+        right: 0;
+        bottom: 20px;
+    }
+    #rules {
+        right: 25px;
+    }
+    .paper-wrap {
+        width: 140px;
+        height: 140px;
+    }
+    .paper-wrap .paper-container {
+        width: 100px;
+        height: 100px;
+    }
+    .scissors-wrap {
+        width: 140px;
+        height: 140px;
+    }
+    .scissors-wrap .scissors-container {
+        width: 100px;
+        height: 100px;
+    }
+    .rock-wrap {
+        width: 140px;
+        height: 140px;
+    }
+    .rock-wrap .rock-container {
+        width: 100px;
+        height: 100px;
+    }
+    .modal {
+        display: none;
+        padding-top: 30%;
+        padding-bottom: 30%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 0;
+        height: 76%;
+        width: 84%;
+        left: 0;
+        top: 0;
+    }
+    .modal-header {
+        justify-content: center;
+    }
+    .modal .modal-header #close-modal-button {
+        display: none;
+    }
+    .modal #close-modal-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .active-modal {
+        display: flex;
+    }
+
+  }
 @keyframes pulse-animation {
     0% {
       box-shadow: 0 0 0 100px rgba(41, 50, 81, 0.5),
