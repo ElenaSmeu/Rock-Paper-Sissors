@@ -120,6 +120,7 @@ const computerWins = () => {
     result.innerHTML = 'You lose';
     playAgain.className = 'lose';
     if (userChoiceIconStep4.classList.contains('winner-wrap')) {
+        console.log('removed frpm user');
         userChoiceIconStep4.classList.remove('winner-wrap');
     }
     computerChoice2.classList.add('winner-wrap');
@@ -133,6 +134,7 @@ const userWins = () => {
     playAgain.className = null;
     if( computerChoice2.classList.contains('winner-wrap')) {
         computerChoice2.classList.remove('winner-wrap');
+        console.log('removed frpm computer');
     }
     userChoiceStep4.classList.add('winner-wrap');
     updateScore();
@@ -145,11 +147,9 @@ const even = () => {
     if (userChoiceIconStep4.classList.contains('winner-wrap')) {
         userChoiceIconStep4.classList.remove('winner-wrap');
     }
-    if( computerChoice2.classList.contains('winner-wrap')) {
+    if (computerChoice2.classList.contains('winner-wrap')) {
         computerChoice2.classList.remove('winner-wrap');
     }
-    computerChoice2.classList.add('winner-wrap');
-    userChoiceStep4.classList.add('winner-wrap');
 }
 const updateComputerChoice = () => {
     setTimeout( () => {
@@ -162,8 +162,10 @@ const updateComputerChoice = () => {
         }
         computerChoice.classList.add(`${computerChosenWeapon}-wrap`);
         computerChoiceIcon.src = `images/icon-${computerChosenWeapon}.svg`;
-        /**goToStep4();
+        goToStep4();
         calculateScore();
+        console.log(computerChoice2.classList);
+        console.log(userChoiceStep4.classList);
         for( i = 0; i <= choices.length -1; i++) {
             if (computerChoice2.classList.contains(`${choices[i]}-wrap`)) {
                 computerChoice2.classList.remove(`${choices[i]}-wrap`);
@@ -171,7 +173,6 @@ const updateComputerChoice = () => {
         }
         computerChoice2.classList.add(`${computerChosenWeapon}-wrap`);
         computerChoiceIcon2.src = `images/icon-${computerChosenWeapon}.svg`;
-        **/
     }, 1000);
     
 }

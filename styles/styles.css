@@ -438,29 +438,8 @@ html, body {
         width: 100px;
         height: 100px;
     }
-    .modal {
-        display: none;
-        padding-top: 30%;
-        padding-bottom: 30%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        border-radius: 0;
-        height: 76%;
-        width: 84%;
-        left: 0;
-        top: 0;
-    }
-    .modal-header {
-        justify-content: center;
-    }
-    .modal .modal-header #close-modal-button {
-        display: none;
-    }
-    .active-modal {
-        display: flex;
-    }
     #step-2, #step-3{
+        margin-top: 50px;
         width: 90%;
     }
     #step-2 .choice-container,  #step-3 .choice-container{
@@ -471,6 +450,10 @@ html, body {
         width: 100px;
         height: 100px;
         margin-top: 30px;
+    }
+    #step-4 {
+        margin-top: 50px;
+        width: 90%;
     }
     #user-choice {
         display: flex;
@@ -484,6 +467,39 @@ html, body {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
+    }
+    .choice-container {
+        width: 100px;
+        height: 100px;
+    }
+    .result {
+        position: absolute;
+        bottom: 100px;
+        left: 20%;
+    }
+    .winner-wrap {
+        box-shadow: 0 0 0 100px rgba(29, 38, 71, 0.2), 0 0 0 80px rgba(36, 45, 76, 0.5), 0 0 0 40px rgba(41, 50, 81, 1);
+    }
+    .modal {
+        height: 92%;
+        border-radius: 0;
+        width: 90%;
+        left: 0;
+        top:0;
+    }
+    .modal-header {
+        margin-top: 50px;
+        justify-content: center;
+    }
+    .modal-body {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .modal-header  #close-modal-button{
+        position: absolute;
+        bottom: 100px;
+        left: 45%
     }
   }
 @keyframes pulse-animation {
