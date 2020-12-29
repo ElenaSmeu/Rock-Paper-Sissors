@@ -460,27 +460,27 @@ html, body {
     .active-modal {
         display: flex;
     }
-    #step-2 {
+    #step-2, #step-3{
         width: 90%;
     }
-    #step-2 .choice-container{
+    #step-2 .choice-container,  #step-3 .choice-container{
         width: 100px;
         height: 100px;
     }
-    #step-2 .empty-choice {
+    #step-2 .empty-choice{
         width: 100px;
         height: 100px;
         margin-top: 30px;
     }
-    #step-2 #user-choice {
+    #user-choice {
         display: flex;
         flex-direction: column-reverse;
     }
-    #step-2 .game-sides-title{
+    .game-sides-title{
         font-size: 14px;
         margin-top: 25px;
     }
-    #step-2 #computer-choice {
+    #computer-choice {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
