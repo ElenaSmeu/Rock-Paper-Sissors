@@ -56,6 +56,11 @@ const goToStep1 = () => {
 const goToStep2 = () => {
     step1.classList.remove('active-step');
     step2.classList.add('active-step');
+    for( i = 0; i <= choices.length -1; i++) {
+        if (userChoiceStep2.classList.contains(`${choices[i]}-wrap`)) {
+            userChoiceStep2.classList.remove(`${choices[i]}-wrap`);
+        }
+    }
     userChoiceStep2.classList.add(`${chosenWeapon}-wrap`);
     userChoiceIconStep2.src = `images/icon-${chosenWeapon}.svg`;
     updateComputerChoice();
@@ -63,12 +68,22 @@ const goToStep2 = () => {
 const goToStep3 = () => {
     step2.classList.remove('active-step');
     step3.classList.add('active-step');
+    for( i = 0; i <= choices.length -1; i++) {
+        if (userChoiceStep3.classList.contains(`${choices[i]}-wrap`)) {
+            userChoiceStep3.classList.remove(`${choices[i]}-wrap`);
+        }
+    }
     userChoiceStep3.classList.add(`${chosenWeapon}-wrap`);
     userChoiceIconStep3.src = `images/icon-${chosenWeapon}.svg`;
 }
 const goToStep4 = () => {
     step3.classList.remove('active-step');
     step4.classList.add('active-step');
+    for( i = 0; i <= choices.length -1; i++) {
+        if (userChoiceStep4.classList.contains(`${choices[i]}-wrap`)) {
+            userChoiceStep4.classList.remove(`${choices[i]}-wrap`);
+        }
+    }
     userChoiceStep4.classList.add(`${chosenWeapon}-wrap`);
     userChoiceIconStep4.src = `images/icon-${chosenWeapon}.svg`;
 }
