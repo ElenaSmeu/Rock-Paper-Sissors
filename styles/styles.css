@@ -110,33 +110,20 @@ html, body {
     background-color: hsl(214, 47%, 23%);
 }
 .game-background {
-    position: absolute;
-    top: 30%;
-    left: -50%;
+    position: fixed;
+    top: 40%;
+    left: 38%;
 }
 .icon {
     width: 40%;
 }
-.paper-wrap {
-    position: relative;
-    background-image: var(--paperGradient);
-    border-radius: 50%;
-    width: 180px;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    -webkit-box-shadow: inset 0px 0px 11px 8px rgba(49,78,211,0.5), inset 0px 0px 11px 8px rgba(49,78,211,0.54); 
-    box-shadow: inset 0px -6px 0px 0px rgba(49,78,211,0.54);
-}
-.paper-container {
+.containerWrap {
     cursor: pointer;
     background-color: white;
     color: var(--darkText);
     border-radius: 50%;
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -144,77 +131,68 @@ html, body {
     align-items: center;
     box-shadow: inset 0px 6px 0px 0px rgb(185, 190, 210, 1);
 }
-.rock-wrap {
+.wrap {
     position: relative;
-    background-image: var(--rockGradient);
     border-radius: 50%;
-    width: 180px;
-    height: 180px;
+    width: 140px;
+    height: 140px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+#rock {
+    background-image: var(--rockGradient);
     -webkit-box-shadow: 0px -6px 0px 0px rgb(158, 21, 51); 
     box-shadow: inset 0px -6px 0px 0px rgb(158, 21, 51);
 }
-.rock-container {
-    cursor: pointer;
-    background-color: white;
-    color: var(--darkText);
-    border-radius: 50%;
-    width: 140px;
-    height: 140px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0px 6px 0px 0px rgb(185, 190, 210);
+#paper {
+    background-image: var(--paperGradient);
+    -webkit-box-shadow: inset 0px 0px 11px 8px rgba(49,78,211,0.5), inset 0px 0px 11px 8px rgba(49,78,211,0.54); 
+    box-shadow: inset 0px -6px 0px 0px rgba(49,78,211,0.54);
 }
-.scissors-wrap {
-    position: relative;
+#scissors {
     background-image: var(--scissorsGradient);
-    border-radius: 50%;
-    width: 180px;
-    height: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     -webkit-box-shadow: inset 0px -6px 0px 0px rgb(204, 116, 22);
     box-shadow: inset 0px -6px 0px 0px rgb(204, 116, 22);
 }
-.scissors-container {
-    cursor: pointer;
-    background-color: white;
-    color: var(--darkText);
-    border-radius: 50%;
-    width: 140px;
-    height: 140px;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: inset 0px 6px 0px 0px rgb(185, 190, 210, 1);
+#lizard {
+    background-image: var(--lizardGradient);
+    -webkit-box-shadow: inset 0px -6px 0px 0px rgb(99, 54, 184);
+    box-shadow: inset 0px -6px 0px 0px rgb(99, 54, 184);
+}
+#spock {
+    background-image: var(--cyan);
+    -webkit-box-shadow: inset 0px -6px 0px 0px rgb(53, 154, 172);
+    box-shadow: inset 0px -6px 0px 0px rgb(53, 154, 172);
 }
 .game-buttons{
     position: relative;
 }
 #button-1 {
-    position: absolute;
-    left: -85%;
-    top: 5%;
+    position: fixed;
+    left: 54%;
+    top: 46%;
 }
 #button-2 {
-    position: relative;
-    left: 50%;
-    padding-top: 10px;
+    position: fixed;
+    left: 44%;
+    top: 32%;
 }
 #button-3 {
-    position: absolute;
-    top: 103%;
-    left: -17%;
+    position: fixed;
+    top: 68%;
+    left: 50%;
+}
+#button-4 {
+    position: fixed;
+    top: 68%;
+    left: 38%;
+}
+#button-5 {
+    position: fixed;
+    top: 46%;
+    left: 34%;
 }
 #step-1 {
     display: none;
@@ -288,6 +266,16 @@ html, body {
     background-image: var(--scissorsGradient);
     -webkit-box-shadow: inset 0px -6px 0px 0px rgb(204, 116, 22);
     box-shadow: inset 0px -6px 0px 0px rgb(204, 116, 22);
+}
+.lizard-wrap {
+    background-image: var(--lizardGradient);
+    -webkit-box-shadow: inset 0px -6px 0px 0px rgb(99, 54, 184);
+    box-shadow: inset 0px -6px 0px 0px rgb(99, 54, 184);
+}
+.spock-wrap {
+    background-image: var(--cyan);
+    -webkit-box-shadow: inset 0px -6px 0px 0px rgb(53, 154, 172);
+    box-shadow: inset 0px -6px 0px 0px rgb(53, 154, 172);
 }
 .choice-container {
     background-color: white;
@@ -394,17 +382,29 @@ html, body {
         font-size: 14px;
     }
     .game-background {
-        left: -65%;
+        left: 10%;
+        top: 32%;
     }
     #button-1 {
-        left: -75%;
+        right: 2%;
+        top: 40%;
+        left: unset;
     }
     #button-2 {
-        left: 60%;
+    left: 34%;
+    top: 26%;
     }
     #button-3 {
-        top: 126%;
-        left: -6%;
+        top: 64%;
+        left: 56%;
+    }
+    #button-4 {
+        top: 64%;
+        left: 14%;
+    }
+    #button-5 {
+        top: 40%;
+        left: 2%;
     }
     .reset-button {
         left: 25px;
@@ -414,41 +414,29 @@ html, body {
     #rules {
         right: 25px;
     }
-    .paper-wrap {
+    .wrap {
+        width: 120px;
+        height: 120px;
+    }
+    .containerWrap {
+        width: 80px;
+        height: 80px;
+    }
+    .choice-wrap {
         width: 140px;
         height: 140px;
-    }
-    .paper-wrap .paper-container {
-        width: 100px;
-        height: 100px;
-    }
-    .scissors-wrap {
-        width: 140px;
-        height: 140px;
-    }
-    .scissors-wrap .scissors-container {
-        width: 100px;
-        height: 100px;
-    }
-    .rock-wrap {
-        width: 140px;
-        height: 140px;
-    }
-    .rock-wrap .rock-container {
-        width: 100px;
-        height: 100px;
     }
     #step-2, #step-3{
         margin-top: 50px;
         width: 90%;
     }
-    #step-2 .choice-container,  #step-3 .choice-container{
+    .choice-container{
         width: 100px;
         height: 100px;
     }
     #step-2 .empty-choice{
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         margin-top: 30px;
     }
     #step-4 {
@@ -467,10 +455,6 @@ html, body {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
-    }
-    .choice-container {
-        width: 100px;
-        height: 100px;
     }
     .result {
         position: absolute;

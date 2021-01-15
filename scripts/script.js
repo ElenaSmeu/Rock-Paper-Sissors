@@ -1,6 +1,6 @@
 const scoreElement = document.getElementById('score');
 const container = document.getElementById('container');
-const choices = ['paper', 'rock', 'scissors'];
+const choices = ['paper', 'rock', 'scissors', 'lizard', 'spock'];
 const step1 = document.getElementById('step-1');
 const step2 = document.getElementById('step-2');
 const step3 = document.getElementById('step-3');
@@ -15,6 +15,8 @@ const resetButton = document.getElementById('resetGame');
 const paperChoiceButton = document.getElementById('paper');
 const rockChoiceButton = document.getElementById('rock');
 const scissorsChoiceButton = document.getElementById('scissors');
+const spockChoiceButton = document.getElementById('spock');
+const lizardChoiceButton = document.getElementById('lizard');
 
 const userChoiceStep2 = document.getElementById('choiceStep2');
 const userChoiceIconStep2 = document.getElementById('choiceIconStep2');
@@ -89,6 +91,10 @@ const calculateScore = () => {
             even();
         } else if (computerChosenWeapon == 'scissors') {
             computerWins();
+        } else if (computerChosenWeapon == 'spock') {
+            userWins();
+        } else if (computerChosenWeapon == 'lizard') {
+            computerWins();
         }
     } else if( chosenWeapon == 'rock') {
         if (computerChosenWeapon == 'rock' ) {
@@ -96,6 +102,10 @@ const calculateScore = () => {
         } else if (computerChosenWeapon == 'paper') {
             computerWins();
         } else if (computerChosenWeapon =='scissors') {
+            userWins();
+        } else if (computerChosenWeapon == 'spock') {
+            computerWins();
+        } else if (computerChosenWeapon == 'lizard') {
             userWins();
         }
 
@@ -106,6 +116,34 @@ const calculateScore = () => {
             userWins();
         } else if (computerChosenWeapon == 'scissors') {
             even();
+        }else if (computerChosenWeapon == 'spock') {
+            computerWins();
+        } else if (computerChosenWeapon == 'lizard') {
+            userWins();
+        }
+    } else if( chosenWeapon == 'lizard') {
+        if (computerChosenWeapon == 'rock' ) {
+            computerWins();
+        } else if (computerChosenWeapon == 'paper') {
+            userWins();
+        } else if (computerChosenWeapon == 'scissors') {
+            computerWins();
+        }else if (computerChosenWeapon == 'spock') {
+            userWins();
+        } else if (computerChosenWeapon == 'lizard') {
+            even();
+        }
+    } else if( chosenWeapon == 'spock') {
+        if (computerChosenWeapon == 'rock' ) {
+            userWins();
+        } else if (computerChosenWeapon == 'paper') {
+            computerWins();
+        } else if (computerChosenWeapon == 'scissors') {
+            userWins();
+        }else if (computerChosenWeapon == 'spock') {
+            even();
+        } else if (computerChosenWeapon == 'lizard') {
+            computerWins();
         }
     }
 }
@@ -114,38 +152,30 @@ const updateScore = () => {
     localStorage.setItem('score', score);
 }
 const computerWins = () => {
-    console.log(chosenWeapon, computerChosenWeapon);
     score --;
-    console.log('Computer wins');
     result.innerHTML = 'You lose';
     playAgain.className = 'lose';
-    if (userChoiceIconStep4.classList.contains('winner-wrap')) {
-        console.log('removed frpm user');
-        userChoiceIconStep4.classList.remove('winner-wrap');
+    if (userChoiceStep4.classList.contains('winner-wrap')) {
+        userChoiceStep4.classList.remove('winner-wrap');
     }
     computerChoice2.classList.add('winner-wrap');
     updateScore();
 }
 const userWins = () => {
     score++;
-    console.log(chosenWeapon, computerChosenWeapon);
-    console.log('User wins');
     result.innerHTML = 'You win';
     playAgain.className = null;
-    if( computerChoice2.classList.contains('winner-wrap')) {
+    if (computerChoice2.classList.contains('winner-wrap')) {
         computerChoice2.classList.remove('winner-wrap');
-        console.log('removed frpm computer');
     }
     userChoiceStep4.classList.add('winner-wrap');
     updateScore();
 }
 const even = () => {
-    console.log('Is even');
-    console.log(chosenWeapon, computerChosenWeapon);
     result.innerHTML = 'Even';
     playAgain.className = null;
-    if (userChoiceIconStep4.classList.contains('winner-wrap')) {
-        userChoiceIconStep4.classList.remove('winner-wrap');
+    if (userChoiceStep4.classList.contains('winner-wrap')) {
+        userChoiceStep4.classList.remove('winner-wrap');
     }
     if (computerChoice2.classList.contains('winner-wrap')) {
         computerChoice2.classList.remove('winner-wrap');
@@ -164,8 +194,6 @@ const updateComputerChoice = () => {
         computerChoiceIcon.src = `images/icon-${computerChosenWeapon}.svg`;
         goToStep4();
         calculateScore();
-        console.log(computerChoice2.classList);
-        console.log(userChoiceStep4.classList);
         for( i = 0; i <= choices.length -1; i++) {
             if (computerChoice2.classList.contains(`${choices[i]}-wrap`)) {
                 computerChoice2.classList.remove(`${choices[i]}-wrap`);
@@ -208,7 +236,14 @@ scissorsChoiceButton.addEventListener('click', () => {
     chosenWeapon = 'scissors';
     goToStep2();
 });
-
+spockChoiceButton.addEventListener('click', () => {
+    chosenWeapon = 'spock';
+    goToStep2();
+});
+lizardChoiceButton.addEventListener('click', () => {
+    chosenWeapon = 'lizard';
+    goToStep2();
+});
 playAgain.addEventListener('click', () => {
     goToStep1();
 });
